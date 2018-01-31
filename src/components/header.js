@@ -8,9 +8,7 @@ class Header extends Component {
 
 	authButton(){
 		const authenticated = this.props.authenticated;
-		return authenticated ? 
-			<button onClick={() => this.props.authenticate(!authenticated)}>Sign Out</button> : 
-			<button onClick={() => this.props.authenticate(!authenticated)}>Sign in</button>
+		return (<button onClick={() => this.props.authenticate(!authenticated)}>Sign {authenticated ? 'Out' : 'In'}</button>);
 	}
 
 	render() {
